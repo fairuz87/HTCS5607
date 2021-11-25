@@ -31,40 +31,35 @@ namespace SaintAlbert
         {
             this.btnDisplayReport = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtPatients = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDisplayReport
             // 
-            this.btnDisplayReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayReport.BackColor = System.Drawing.Color.White;
+            this.btnDisplayReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisplayReport.Location = new System.Drawing.Point(256, 740);
             this.btnDisplayReport.Name = "btnDisplayReport";
-            this.btnDisplayReport.Size = new System.Drawing.Size(146, 46);
+            this.btnDisplayReport.Size = new System.Drawing.Size(177, 46);
             this.btnDisplayReport.TabIndex = 7;
             this.btnDisplayReport.Text = "Display Report";
-            this.btnDisplayReport.UseVisualStyleBackColor = true;
+            this.btnDisplayReport.UseVisualStyleBackColor = false;
             this.btnDisplayReport.Click += new System.EventHandler(this.btnDisplayReport_Click);
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.White;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.Location = new System.Drawing.Point(1051, 740);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(146, 46);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(525, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 55);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Patients Report";
             // 
             // txtPatients
             // 
@@ -78,20 +73,42 @@ namespace SaintAlbert
             this.txtPatients.TabIndex = 10;
             this.txtPatients.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(501, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(363, 57);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Patients Report";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SaintAlbert.Properties.Resources.Blue_and_Cyan_Modern_Icons_General_Hospital_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(689, -139);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(324, 264);
+            this.pictureBox2.TabIndex = 45;
+            this.pictureBox2.TabStop = false;
+            // 
             // PatientReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1467, 831);
-            this.Controls.Add(this.txtPatients);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPatients);
             this.Controls.Add(this.btnDisplayReport);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PatientReportForm";
             this.Text = "Patients Report";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +117,8 @@ namespace SaintAlbert
         #endregion
         private System.Windows.Forms.Button btnDisplayReport;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtPatients;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -76,12 +76,12 @@ namespace SaintAlbert
             this.oleDbUpdateCommand9 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand9 = new System.Data.OleDb.OleDbCommand();
             this.daResearchTopic = new System.Data.OleDb.OleDbDataAdapter();
+            this.dsSaintAlbert = new SaintAlbert.SaintAlbertDatabaseDataSet();
             this.oleDbSelectCommand10 = new System.Data.OleDb.OleDbCommand();
             this.oleDbInsertCommand10 = new System.Data.OleDb.OleDbCommand();
             this.oleDbUpdateCommand10 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand10 = new System.Data.OleDb.OleDbCommand();
             this.daWard = new System.Data.OleDb.OleDbDataAdapter();
-            this.dsSaintAlbert = new SaintAlbert.SaintAlbertDatabaseDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dsSaintAlbert)).BeginInit();
             this.SuspendLayout();
             // 
@@ -696,6 +696,11 @@ namespace SaintAlbert
                         new System.Data.Common.DataColumnMapping("Level", "Level")})});
             this.daResearchTopic.UpdateCommand = this.oleDbUpdateCommand9;
             // 
+            // dsSaintAlbert
+            // 
+            this.dsSaintAlbert.DataSetName = "SaintAlbertDatabaseDataSet";
+            this.dsSaintAlbert.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // oleDbSelectCommand10
             // 
             this.oleDbSelectCommand10.CommandText = "SELECT        WardID, WardName, Location, Capacity\r\nFROM            WARD\r\nORDER B" +
@@ -708,7 +713,7 @@ namespace SaintAlbert
             this.oleDbInsertCommand10.Connection = this.ctnSaintAlbert;
             this.oleDbInsertCommand10.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
             new System.Data.OleDb.OleDbParameter("WardName", System.Data.OleDb.OleDbType.VarWChar, 0, "WardName"),
-            new System.Data.OleDb.OleDbParameter("Location", System.Data.OleDb.OleDbType.Double, 0, "Location"),
+            new System.Data.OleDb.OleDbParameter("Location", System.Data.OleDb.OleDbType.Integer, 0, "Location"),
             new System.Data.OleDb.OleDbParameter("Capacity", System.Data.OleDb.OleDbType.Double, 0, "Capacity")});
             // 
             // oleDbUpdateCommand10
@@ -717,13 +722,13 @@ namespace SaintAlbert
             this.oleDbUpdateCommand10.Connection = this.ctnSaintAlbert;
             this.oleDbUpdateCommand10.Parameters.AddRange(new System.Data.OleDb.OleDbParameter[] {
             new System.Data.OleDb.OleDbParameter("WardName", System.Data.OleDb.OleDbType.VarWChar, 0, "WardName"),
-            new System.Data.OleDb.OleDbParameter("Location", System.Data.OleDb.OleDbType.Double, 0, "Location"),
+            new System.Data.OleDb.OleDbParameter("Location", System.Data.OleDb.OleDbType.Integer, 0, "Location"),
             new System.Data.OleDb.OleDbParameter("Capacity", System.Data.OleDb.OleDbType.Double, 0, "Capacity"),
             new System.Data.OleDb.OleDbParameter("Original_WardID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "WardID", System.Data.DataRowVersion.Original, null),
             new System.Data.OleDb.OleDbParameter("IsNull_WardName", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WardName", System.Data.DataRowVersion.Original, true, null),
             new System.Data.OleDb.OleDbParameter("Original_WardName", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "WardName", System.Data.DataRowVersion.Original, null),
             new System.Data.OleDb.OleDbParameter("IsNull_Location", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, true, null),
-            new System.Data.OleDb.OleDbParameter("Original_Location", System.Data.OleDb.OleDbType.Double, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("Original_Location", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, null),
             new System.Data.OleDb.OleDbParameter("IsNull_Capacity", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Capacity", System.Data.DataRowVersion.Original, true, null),
             new System.Data.OleDb.OleDbParameter("Original_Capacity", System.Data.OleDb.OleDbType.Double, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Capacity", System.Data.DataRowVersion.Original, null)});
             // 
@@ -736,7 +741,7 @@ namespace SaintAlbert
             new System.Data.OleDb.OleDbParameter("IsNull_WardName", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WardName", System.Data.DataRowVersion.Original, true, null),
             new System.Data.OleDb.OleDbParameter("Original_WardName", System.Data.OleDb.OleDbType.VarWChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "WardName", System.Data.DataRowVersion.Original, null),
             new System.Data.OleDb.OleDbParameter("IsNull_Location", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, true, null),
-            new System.Data.OleDb.OleDbParameter("Original_Location", System.Data.OleDb.OleDbType.Double, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, null),
+            new System.Data.OleDb.OleDbParameter("Original_Location", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Location", System.Data.DataRowVersion.Original, null),
             new System.Data.OleDb.OleDbParameter("IsNull_Capacity", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Capacity", System.Data.DataRowVersion.Original, true, null),
             new System.Data.OleDb.OleDbParameter("Original_Capacity", System.Data.OleDb.OleDbType.Double, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "Capacity", System.Data.DataRowVersion.Original, null)});
             // 
@@ -752,11 +757,6 @@ namespace SaintAlbert
                         new System.Data.Common.DataColumnMapping("Location", "Location"),
                         new System.Data.Common.DataColumnMapping("Capacity", "Capacity")})});
             this.daWard.UpdateCommand = this.oleDbUpdateCommand10;
-            // 
-            // dsSaintAlbert
-            // 
-            this.dsSaintAlbert.DataSetName = "SaintAlbertDatabaseDataSet";
-            this.dsSaintAlbert.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DataController
             // 
@@ -819,11 +819,11 @@ namespace SaintAlbert
         private System.Data.OleDb.OleDbCommand oleDbUpdateCommand9;
         private System.Data.OleDb.OleDbCommand oleDbDeleteCommand9;
         private System.Data.OleDb.OleDbDataAdapter daResearchTopic;
+        public SaintAlbertDatabaseDataSet dsSaintAlbert;
         private System.Data.OleDb.OleDbCommand oleDbSelectCommand10;
         private System.Data.OleDb.OleDbCommand oleDbInsertCommand10;
         private System.Data.OleDb.OleDbCommand oleDbUpdateCommand10;
         private System.Data.OleDb.OleDbCommand oleDbDeleteCommand10;
         private System.Data.OleDb.OleDbDataAdapter daWard;
-        public SaintAlbertDatabaseDataSet dsSaintAlbert;
     }
 }

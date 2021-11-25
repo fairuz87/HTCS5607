@@ -110,7 +110,7 @@ namespace SaintAlbert
                 DC.UpdatePatient();
                 CustomMsgBox.Show("Patient added successfully", "Add Patient", "OK");
                 System.Threading.Thread.Sleep(800);
-                DialogResult dialogResult = MessageBox.Show("Delete another patient?", "Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Add another patient?", "Add", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     txtStreetAddress.Text = "";

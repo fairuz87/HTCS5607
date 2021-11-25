@@ -64,23 +64,25 @@ namespace SaintAlbert {
         
         private WARD1DataTable tableWARD1;
         
-        private global::System.Data.DataRelation relationPATIENT_ADMISSION;
+        private WARD2DataTable tableWARD2;
         
         private global::System.Data.DataRelation relationWARD_ADMISSION;
         
-        private global::System.Data.DataRelation relationDOCTOR_ALLOCATION;
+        private global::System.Data.DataRelation relationPATIENT_ADMISSION;
         
         private global::System.Data.DataRelation relationADMISSION_ALLOCATION;
         
-        private global::System.Data.DataRelation relationADMISSION_PAYMENT;
+        private global::System.Data.DataRelation relationDOCTOR_ALLOCATION;
         
-        private global::System.Data.DataRelation relationMEDICATION_PRESCRIPTION;
+        private global::System.Data.DataRelation relationADMISSION_PAYMENT;
         
         private global::System.Data.DataRelation relationADMISSION_PRESCRIPTION;
         
-        private global::System.Data.DataRelation relationRESEARCHTOPIC_RESEARCHPROJECT;
+        private global::System.Data.DataRelation relationMEDICATION_PRESCRIPTION;
         
         private global::System.Data.DataRelation relationDOCTOR_RESEARCHPROJECT;
+        
+        private global::System.Data.DataRelation relationRESEARCHTOPIC_RESEARCHPROJECT;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -169,6 +171,9 @@ namespace SaintAlbert {
                 }
                 if ((ds.Tables["WARD1"] != null)) {
                     base.Tables.Add(new WARD1DataTable(ds.Tables["WARD1"]));
+                }
+                if ((ds.Tables["WARD2"] != null)) {
+                    base.Tables.Add(new WARD2DataTable(ds.Tables["WARD2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -390,6 +395,16 @@ namespace SaintAlbert {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public WARD2DataTable WARD2 {
+            get {
+                return this.tableWARD2;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -514,6 +529,9 @@ namespace SaintAlbert {
                 }
                 if ((ds.Tables["WARD1"] != null)) {
                     base.Tables.Add(new WARD1DataTable(ds.Tables["WARD1"]));
+                }
+                if ((ds.Tables["WARD2"] != null)) {
+                    base.Tables.Add(new WARD2DataTable(ds.Tables["WARD2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -668,15 +686,21 @@ namespace SaintAlbert {
                     this.tableWARD1.InitVars();
                 }
             }
-            this.relationPATIENT_ADMISSION = this.Relations["PATIENT_ADMISSION"];
+            this.tableWARD2 = ((WARD2DataTable)(base.Tables["WARD2"]));
+            if ((initTable == true)) {
+                if ((this.tableWARD2 != null)) {
+                    this.tableWARD2.InitVars();
+                }
+            }
             this.relationWARD_ADMISSION = this.Relations["WARD_ADMISSION"];
-            this.relationDOCTOR_ALLOCATION = this.Relations["DOCTOR_ALLOCATION"];
+            this.relationPATIENT_ADMISSION = this.Relations["PATIENT_ADMISSION"];
             this.relationADMISSION_ALLOCATION = this.Relations["ADMISSION_ALLOCATION"];
+            this.relationDOCTOR_ALLOCATION = this.Relations["DOCTOR_ALLOCATION"];
             this.relationADMISSION_PAYMENT = this.Relations["ADMISSION_PAYMENT"];
-            this.relationMEDICATION_PRESCRIPTION = this.Relations["MEDICATION_PRESCRIPTION"];
             this.relationADMISSION_PRESCRIPTION = this.Relations["ADMISSION_PRESCRIPTION"];
-            this.relationRESEARCHTOPIC_RESEARCHPROJECT = this.Relations["RESEARCHTOPIC_RESEARCHPROJECT"];
+            this.relationMEDICATION_PRESCRIPTION = this.Relations["MEDICATION_PRESCRIPTION"];
             this.relationDOCTOR_RESEARCHPROJECT = this.Relations["DOCTOR_RESEARCHPROJECT"];
+            this.relationRESEARCHTOPIC_RESEARCHPROJECT = this.Relations["RESEARCHTOPIC_RESEARCHPROJECT"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -727,14 +751,9 @@ namespace SaintAlbert {
             base.Tables.Add(this.tableRESEARCHTOPIC1);
             this.tableWARD1 = new WARD1DataTable();
             base.Tables.Add(this.tableWARD1);
+            this.tableWARD2 = new WARD2DataTable();
+            base.Tables.Add(this.tableWARD2);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("PATIENT_ADMISSION", new global::System.Data.DataColumn[] {
-                        this.tablePATIENT.PatientIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableADMISSION.PatientIDColumn});
-            this.tableADMISSION.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("WARD_ADMISSION", new global::System.Data.DataColumn[] {
                         this.tableWARD.WardIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableADMISSION.WardIDColumn});
@@ -742,16 +761,23 @@ namespace SaintAlbert {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("DOCTOR_ALLOCATION", new global::System.Data.DataColumn[] {
-                        this.tableDOCTOR.DoctorIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableALLOCATION.DoctorIDColumn});
-            this.tableALLOCATION.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("PATIENT_ADMISSION", new global::System.Data.DataColumn[] {
+                        this.tablePATIENT.PatientIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableADMISSION.PatientIDColumn});
+            this.tableADMISSION.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("ADMISSION_ALLOCATION", new global::System.Data.DataColumn[] {
                         this.tableADMISSION.AdmissionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableALLOCATION.AdmissionIDColumn});
+            this.tableALLOCATION.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("DOCTOR_ALLOCATION", new global::System.Data.DataColumn[] {
+                        this.tableDOCTOR.DoctorIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableALLOCATION.DoctorIDColumn});
             this.tableALLOCATION.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -763,13 +789,6 @@ namespace SaintAlbert {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("MEDICATION_PRESCRIPTION", new global::System.Data.DataColumn[] {
-                        this.tableMEDICATION.MedicationIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePRESCRIPTION.MedicationIDColumn});
-            this.tablePRESCRIPTION.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("ADMISSION_PRESCRIPTION", new global::System.Data.DataColumn[] {
                         this.tableADMISSION.AdmissionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePRESCRIPTION.AdmissionIDColumn});
@@ -777,10 +796,10 @@ namespace SaintAlbert {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("RESEARCHTOPIC_RESEARCHPROJECT", new global::System.Data.DataColumn[] {
-                        this.tableRESEARCHTOPIC.ResearchTopicIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRESEARCHPROJECT.ResearchTopicIDColumn});
-            this.tableRESEARCHPROJECT.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("MEDICATION_PRESCRIPTION", new global::System.Data.DataColumn[] {
+                        this.tableMEDICATION.MedicationIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePRESCRIPTION.MedicationIDColumn});
+            this.tablePRESCRIPTION.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
@@ -791,42 +810,49 @@ namespace SaintAlbert {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            this.relationPATIENT_ADMISSION = new global::System.Data.DataRelation("PATIENT_ADMISSION", new global::System.Data.DataColumn[] {
-                        this.tablePATIENT.PatientIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableADMISSION.PatientIDColumn}, false);
-            this.Relations.Add(this.relationPATIENT_ADMISSION);
+            fkc = new global::System.Data.ForeignKeyConstraint("RESEARCHTOPIC_RESEARCHPROJECT", new global::System.Data.DataColumn[] {
+                        this.tableRESEARCHTOPIC.ResearchTopicIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRESEARCHPROJECT.ResearchTopicIDColumn});
+            this.tableRESEARCHPROJECT.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
             this.relationWARD_ADMISSION = new global::System.Data.DataRelation("WARD_ADMISSION", new global::System.Data.DataColumn[] {
                         this.tableWARD.WardIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableADMISSION.WardIDColumn}, false);
             this.Relations.Add(this.relationWARD_ADMISSION);
-            this.relationDOCTOR_ALLOCATION = new global::System.Data.DataRelation("DOCTOR_ALLOCATION", new global::System.Data.DataColumn[] {
-                        this.tableDOCTOR.DoctorIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableALLOCATION.DoctorIDColumn}, false);
-            this.Relations.Add(this.relationDOCTOR_ALLOCATION);
+            this.relationPATIENT_ADMISSION = new global::System.Data.DataRelation("PATIENT_ADMISSION", new global::System.Data.DataColumn[] {
+                        this.tablePATIENT.PatientIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableADMISSION.PatientIDColumn}, false);
+            this.Relations.Add(this.relationPATIENT_ADMISSION);
             this.relationADMISSION_ALLOCATION = new global::System.Data.DataRelation("ADMISSION_ALLOCATION", new global::System.Data.DataColumn[] {
                         this.tableADMISSION.AdmissionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableALLOCATION.AdmissionIDColumn}, false);
             this.Relations.Add(this.relationADMISSION_ALLOCATION);
+            this.relationDOCTOR_ALLOCATION = new global::System.Data.DataRelation("DOCTOR_ALLOCATION", new global::System.Data.DataColumn[] {
+                        this.tableDOCTOR.DoctorIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableALLOCATION.DoctorIDColumn}, false);
+            this.Relations.Add(this.relationDOCTOR_ALLOCATION);
             this.relationADMISSION_PAYMENT = new global::System.Data.DataRelation("ADMISSION_PAYMENT", new global::System.Data.DataColumn[] {
                         this.tableADMISSION.AdmissionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePAYMENT.AdmissionIDColumn}, false);
             this.Relations.Add(this.relationADMISSION_PAYMENT);
-            this.relationMEDICATION_PRESCRIPTION = new global::System.Data.DataRelation("MEDICATION_PRESCRIPTION", new global::System.Data.DataColumn[] {
-                        this.tableMEDICATION.MedicationIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePRESCRIPTION.MedicationIDColumn}, false);
-            this.Relations.Add(this.relationMEDICATION_PRESCRIPTION);
             this.relationADMISSION_PRESCRIPTION = new global::System.Data.DataRelation("ADMISSION_PRESCRIPTION", new global::System.Data.DataColumn[] {
                         this.tableADMISSION.AdmissionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePRESCRIPTION.AdmissionIDColumn}, false);
             this.Relations.Add(this.relationADMISSION_PRESCRIPTION);
-            this.relationRESEARCHTOPIC_RESEARCHPROJECT = new global::System.Data.DataRelation("RESEARCHTOPIC_RESEARCHPROJECT", new global::System.Data.DataColumn[] {
-                        this.tableRESEARCHTOPIC.ResearchTopicIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRESEARCHPROJECT.ResearchTopicIDColumn}, false);
-            this.Relations.Add(this.relationRESEARCHTOPIC_RESEARCHPROJECT);
+            this.relationMEDICATION_PRESCRIPTION = new global::System.Data.DataRelation("MEDICATION_PRESCRIPTION", new global::System.Data.DataColumn[] {
+                        this.tableMEDICATION.MedicationIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePRESCRIPTION.MedicationIDColumn}, false);
+            this.Relations.Add(this.relationMEDICATION_PRESCRIPTION);
             this.relationDOCTOR_RESEARCHPROJECT = new global::System.Data.DataRelation("DOCTOR_RESEARCHPROJECT", new global::System.Data.DataColumn[] {
                         this.tableDOCTOR.DoctorIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableRESEARCHPROJECT.DoctorIDColumn}, false);
             this.Relations.Add(this.relationDOCTOR_RESEARCHPROJECT);
+            this.relationRESEARCHTOPIC_RESEARCHPROJECT = new global::System.Data.DataRelation("RESEARCHTOPIC_RESEARCHPROJECT", new global::System.Data.DataColumn[] {
+                        this.tableRESEARCHTOPIC.ResearchTopicIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRESEARCHPROJECT.ResearchTopicIDColumn}, false);
+            this.Relations.Add(this.relationRESEARCHTOPIC_RESEARCHPROJECT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,6 +977,12 @@ namespace SaintAlbert {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeWARD2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1063,6 +1095,9 @@ namespace SaintAlbert {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void WARD1RowChangeEventHandler(object sender, WARD1RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void WARD2RowChangeEventHandler(object sender, WARD2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -7484,6 +7519,309 @@ namespace SaintAlbert {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class WARD2DataTable : global::System.Data.TypedTableBase<WARD2Row> {
+            
+            private global::System.Data.DataColumn columnWardID;
+            
+            private global::System.Data.DataColumn columnWardName;
+            
+            private global::System.Data.DataColumn columnLocation;
+            
+            private global::System.Data.DataColumn columnCapacity;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2DataTable() {
+                this.TableName = "WARD2";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal WARD2DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected WARD2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WardIDColumn {
+                get {
+                    return this.columnWardID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WardNameColumn {
+                get {
+                    return this.columnWardName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LocationColumn {
+                get {
+                    return this.columnLocation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CapacityColumn {
+                get {
+                    return this.columnCapacity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2Row this[int index] {
+                get {
+                    return ((WARD2Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event WARD2RowChangeEventHandler WARD2RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event WARD2RowChangeEventHandler WARD2RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event WARD2RowChangeEventHandler WARD2RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event WARD2RowChangeEventHandler WARD2RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddWARD2Row(WARD2Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2Row AddWARD2Row(string WardName, string Location, double Capacity) {
+                WARD2Row rowWARD2Row = ((WARD2Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        WardName,
+                        Location,
+                        Capacity};
+                rowWARD2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWARD2Row);
+                return rowWARD2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2Row FindByWardID(int WardID) {
+                return ((WARD2Row)(this.Rows.Find(new object[] {
+                            WardID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                WARD2DataTable cln = ((WARD2DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new WARD2DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnWardID = base.Columns["WardID"];
+                this.columnWardName = base.Columns["WardName"];
+                this.columnLocation = base.Columns["Location"];
+                this.columnCapacity = base.Columns["Capacity"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnWardID = new global::System.Data.DataColumn("WardID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWardID);
+                this.columnWardName = new global::System.Data.DataColumn("WardName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWardName);
+                this.columnLocation = new global::System.Data.DataColumn("Location", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocation);
+                this.columnCapacity = new global::System.Data.DataColumn("Capacity", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCapacity);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnWardID}, true));
+                this.columnWardID.AutoIncrement = true;
+                this.columnWardID.AllowDBNull = false;
+                this.columnWardID.Unique = true;
+                this.columnWardName.MaxLength = 20;
+                this.columnLocation.MaxLength = 7;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2Row NewWARD2Row() {
+                return ((WARD2Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new WARD2Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(WARD2Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.WARD2RowChanged != null)) {
+                    this.WARD2RowChanged(this, new WARD2RowChangeEvent(((WARD2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.WARD2RowChanging != null)) {
+                    this.WARD2RowChanging(this, new WARD2RowChangeEvent(((WARD2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.WARD2RowDeleted != null)) {
+                    this.WARD2RowDeleted(this, new WARD2RowChangeEvent(((WARD2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.WARD2RowDeleting != null)) {
+                    this.WARD2RowDeleting(this, new WARD2RowChangeEvent(((WARD2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveWARD2Row(WARD2Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SaintAlbertDatabaseDataSet ds = new SaintAlbertDatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "WARD2DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ADMISSIONRow : global::System.Data.DataRow {
@@ -7590,23 +7928,23 @@ namespace SaintAlbert {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PATIENTRow PATIENTRow {
-                get {
-                    return ((PATIENTRow)(this.GetParentRow(this.Table.ParentRelations["PATIENT_ADMISSION"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["PATIENT_ADMISSION"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public WARDRow WARDRow {
                 get {
                     return ((WARDRow)(this.GetParentRow(this.Table.ParentRelations["WARD_ADMISSION"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["WARD_ADMISSION"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PATIENTRow PATIENTRow {
+                get {
+                    return ((PATIENTRow)(this.GetParentRow(this.Table.ParentRelations["PATIENT_ADMISSION"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PATIENT_ADMISSION"]);
                 }
             }
             
@@ -7774,23 +8112,23 @@ namespace SaintAlbert {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DOCTORRow DOCTORRow {
-                get {
-                    return ((DOCTORRow)(this.GetParentRow(this.Table.ParentRelations["DOCTOR_ALLOCATION"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["DOCTOR_ALLOCATION"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ADMISSIONRow ADMISSIONRow {
                 get {
                     return ((ADMISSIONRow)(this.GetParentRow(this.Table.ParentRelations["ADMISSION_ALLOCATION"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ADMISSION_ALLOCATION"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DOCTORRow DOCTORRow {
+                get {
+                    return ((DOCTORRow)(this.GetParentRow(this.Table.ParentRelations["DOCTOR_ALLOCATION"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["DOCTOR_ALLOCATION"]);
                 }
             }
             
@@ -8636,23 +8974,23 @@ namespace SaintAlbert {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MEDICATIONRow MEDICATIONRow {
-                get {
-                    return ((MEDICATIONRow)(this.GetParentRow(this.Table.ParentRelations["MEDICATION_PRESCRIPTION"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["MEDICATION_PRESCRIPTION"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ADMISSIONRow ADMISSIONRow {
                 get {
                     return ((ADMISSIONRow)(this.GetParentRow(this.Table.ParentRelations["ADMISSION_PRESCRIPTION"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ADMISSION_PRESCRIPTION"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MEDICATIONRow MEDICATIONRow {
+                get {
+                    return ((MEDICATIONRow)(this.GetParentRow(this.Table.ParentRelations["MEDICATION_PRESCRIPTION"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["MEDICATION_PRESCRIPTION"]);
                 }
             }
             
@@ -8767,23 +9105,23 @@ namespace SaintAlbert {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RESEARCHTOPICRow RESEARCHTOPICRow {
-                get {
-                    return ((RESEARCHTOPICRow)(this.GetParentRow(this.Table.ParentRelations["RESEARCHTOPIC_RESEARCHPROJECT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["RESEARCHTOPIC_RESEARCHPROJECT"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DOCTORRow DOCTORRow {
                 get {
                     return ((DOCTORRow)(this.GetParentRow(this.Table.ParentRelations["DOCTOR_RESEARCHPROJECT"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["DOCTOR_RESEARCHPROJECT"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RESEARCHTOPICRow RESEARCHTOPICRow {
+                get {
+                    return ((RESEARCHTOPICRow)(this.GetParentRow(this.Table.ParentRelations["RESEARCHTOPIC_RESEARCHPROJECT"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["RESEARCHTOPIC_RESEARCHPROJECT"]);
                 }
             }
             
@@ -10398,6 +10736,116 @@ namespace SaintAlbert {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class WARD2Row : global::System.Data.DataRow {
+            
+            private WARD2DataTable tableWARD2;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal WARD2Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableWARD2 = ((WARD2DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int WardID {
+                get {
+                    return ((int)(this[this.tableWARD2.WardIDColumn]));
+                }
+                set {
+                    this[this.tableWARD2.WardIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string WardName {
+                get {
+                    try {
+                        return ((string)(this[this.tableWARD2.WardNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WardName\' in table \'WARD2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWARD2.WardNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Location {
+                get {
+                    try {
+                        return ((string)(this[this.tableWARD2.LocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Location\' in table \'WARD2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWARD2.LocationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Capacity {
+                get {
+                    try {
+                        return ((double)(this[this.tableWARD2.CapacityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Capacity\' in table \'WARD2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWARD2.CapacityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWardNameNull() {
+                return this.IsNull(this.tableWARD2.WardNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWardNameNull() {
+                this[this.tableWARD2.WardNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLocationNull() {
+                return this.IsNull(this.tableWARD2.LocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLocationNull() {
+                this[this.tableWARD2.LocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCapacityNull() {
+                return this.IsNull(this.tableWARD2.CapacityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCapacityNull() {
+                this[this.tableWARD2.CapacityColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -11063,6 +11511,40 @@ namespace SaintAlbert {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public WARD1Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class WARD2RowChangeEvent : global::System.EventArgs {
+            
+            private WARD2Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2RowChangeEvent(WARD2Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public WARD2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -15195,15 +15677,6 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(SaintAlbertDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._wARDTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._wARDTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._pATIENTTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.PATIENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15213,12 +15686,12 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rESEARCHTOPICTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._wARDTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rESEARCHTOPICTableAdapter.Update(updatedRows));
+                    result = (result + this._wARDTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15249,12 +15722,21 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._rESEARCHTOPICTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(updatedRows));
+                    result = (result + this._rESEARCHTOPICTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rESEARCHPROJECTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15267,12 +15749,12 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rESEARCHPROJECTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(updatedRows));
+                    result = (result + this._pAYMENTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15295,14 +15777,6 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(SaintAlbertDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._wARDTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._wARDTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._pATIENTTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.PATIENT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -15311,11 +15785,11 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rESEARCHTOPICTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._wARDTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rESEARCHTOPICTableAdapter.Update(addedRows));
+                    result = (result + this._wARDTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -15343,11 +15817,19 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._rESEARCHTOPICTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(addedRows));
+                    result = (result + this._rESEARCHTOPICTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rESEARCHPROJECTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -15359,11 +15841,11 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rESEARCHPROJECTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(addedRows));
+                    result = (result + this._pAYMENTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -15393,11 +15875,11 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rESEARCHPROJECTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(deletedRows));
+                    result = (result + this._pAYMENTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -15409,11 +15891,19 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._rESEARCHPROJECTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RESEARCHPROJECT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(deletedRows));
+                    result = (result + this._rESEARCHPROJECTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rESEARCHTOPICTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rESEARCHTOPICTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -15441,11 +15931,11 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rESEARCHTOPICTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RESEARCHTOPIC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._wARDTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rESEARCHTOPICTableAdapter.Update(deletedRows));
+                    result = (result + this._wARDTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -15454,14 +15944,6 @@ namespace SaintAlbert.SaintAlbertDatabaseDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._pATIENTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._wARDTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.WARD.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._wARDTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

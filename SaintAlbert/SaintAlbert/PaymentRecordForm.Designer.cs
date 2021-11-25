@@ -52,14 +52,19 @@ namespace SaintAlbert
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(298, 39);
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(383, 55);
             this.label1.TabIndex = 0;
@@ -69,7 +74,7 @@ namespace SaintAlbert
             // 
             this.lblPatients.AutoSize = true;
             this.lblPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatients.Location = new System.Drawing.Point(156, 202);
+            this.lblPatients.Location = new System.Drawing.Point(156, 220);
             this.lblPatients.Name = "lblPatients";
             this.lblPatients.Size = new System.Drawing.Size(96, 25);
             this.lblPatients.TabIndex = 1;
@@ -79,7 +84,7 @@ namespace SaintAlbert
             // 
             this.lblPatientID.AutoSize = true;
             this.lblPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientID.Location = new System.Drawing.Point(141, 240);
+            this.lblPatientID.Location = new System.Drawing.Point(141, 258);
             this.lblPatientID.Name = "lblPatientID";
             this.lblPatientID.Size = new System.Drawing.Size(111, 25);
             this.lblPatientID.TabIndex = 2;
@@ -89,7 +94,7 @@ namespace SaintAlbert
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(131, 273);
+            this.lblLastName.Location = new System.Drawing.Point(131, 291);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(121, 25);
             this.lblLastName.TabIndex = 3;
@@ -99,7 +104,7 @@ namespace SaintAlbert
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(131, 308);
+            this.lblFirstName.Location = new System.Drawing.Point(131, 326);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(122, 25);
             this.lblFirstName.TabIndex = 4;
@@ -109,7 +114,7 @@ namespace SaintAlbert
             // 
             this.lblBilledAdmissions.AutoSize = true;
             this.lblBilledAdmissions.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBilledAdmissions.Location = new System.Drawing.Point(66, 343);
+            this.lblBilledAdmissions.Location = new System.Drawing.Point(66, 361);
             this.lblBilledAdmissions.Name = "lblBilledAdmissions";
             this.lblBilledAdmissions.Size = new System.Drawing.Size(187, 25);
             this.lblBilledAdmissions.TabIndex = 5;
@@ -119,7 +124,7 @@ namespace SaintAlbert
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(163, 603);
+            this.lblAmount.Location = new System.Drawing.Point(163, 621);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(91, 25);
             this.lblAmount.TabIndex = 6;
@@ -127,29 +132,31 @@ namespace SaintAlbert
             // 
             // btnRecordPayment
             // 
+            this.btnRecordPayment.BackColor = System.Drawing.Color.White;
             this.btnRecordPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecordPayment.Location = new System.Drawing.Point(59, 720);
+            this.btnRecordPayment.Location = new System.Drawing.Point(59, 738);
             this.btnRecordPayment.Name = "btnRecordPayment";
             this.btnRecordPayment.Size = new System.Drawing.Size(197, 61);
             this.btnRecordPayment.TabIndex = 7;
             this.btnRecordPayment.Text = "Record Payment";
-            this.btnRecordPayment.UseVisualStyleBackColor = true;
+            this.btnRecordPayment.UseVisualStyleBackColor = false;
             this.btnRecordPayment.Click += new System.EventHandler(this.btnRecordPayment_Click);
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(363, 717);
+            this.btnReturn.Location = new System.Drawing.Point(363, 735);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(192, 61);
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // txtPatientID
             // 
-            this.txtPatientID.Location = new System.Drawing.Point(265, 238);
+            this.txtPatientID.Location = new System.Drawing.Point(265, 256);
             this.txtPatientID.MaxLength = 8;
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.ReadOnly = true;
@@ -159,7 +166,7 @@ namespace SaintAlbert
             // cboPatient
             // 
             this.cboPatient.FormattingEnabled = true;
-            this.cboPatient.Location = new System.Drawing.Point(265, 200);
+            this.cboPatient.Location = new System.Drawing.Point(265, 218);
             this.cboPatient.MaxLength = 40;
             this.cboPatient.Name = "cboPatient";
             this.cboPatient.Size = new System.Drawing.Size(533, 32);
@@ -168,7 +175,7 @@ namespace SaintAlbert
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(265, 273);
+            this.txtLastName.Location = new System.Drawing.Point(265, 291);
             this.txtLastName.MaxLength = 20;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
@@ -177,7 +184,7 @@ namespace SaintAlbert
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(265, 308);
+            this.txtFirstName.Location = new System.Drawing.Point(265, 326);
             this.txtFirstName.MaxLength = 20;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
@@ -193,7 +200,7 @@ namespace SaintAlbert
             this.lstBilledAdmissions.FullRowSelect = true;
             this.lstBilledAdmissions.GridLines = true;
             this.lstBilledAdmissions.HideSelection = false;
-            this.lstBilledAdmissions.Location = new System.Drawing.Point(265, 343);
+            this.lstBilledAdmissions.Location = new System.Drawing.Point(265, 361);
             this.lstBilledAdmissions.MultiSelect = false;
             this.lstBilledAdmissions.Name = "lstBilledAdmissions";
             this.lstBilledAdmissions.Size = new System.Drawing.Size(496, 252);
@@ -221,7 +228,7 @@ namespace SaintAlbert
             0,
             0,
             131072});
-            this.nudAmount.Location = new System.Drawing.Point(294, 604);
+            this.nudAmount.Location = new System.Drawing.Point(294, 622);
             this.nudAmount.Maximum = new decimal(new int[] {
             20000,
             0,
@@ -246,7 +253,7 @@ namespace SaintAlbert
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(265, 605);
+            this.label2.Location = new System.Drawing.Point(265, 623);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 25);
             this.label2.TabIndex = 17;
@@ -254,19 +261,20 @@ namespace SaintAlbert
             // 
             // btnRecordAnother
             // 
-            this.btnRecordAnother.Location = new System.Drawing.Point(650, 715);
+            this.btnRecordAnother.BackColor = System.Drawing.Color.White;
+            this.btnRecordAnother.Location = new System.Drawing.Point(650, 733);
             this.btnRecordAnother.Name = "btnRecordAnother";
             this.btnRecordAnother.Size = new System.Drawing.Size(264, 66);
             this.btnRecordAnother.TabIndex = 18;
             this.btnRecordAnother.Text = "Record Another Payment";
-            this.btnRecordAnother.UseVisualStyleBackColor = true;
+            this.btnRecordAnother.UseVisualStyleBackColor = false;
             this.btnRecordAnother.Click += new System.EventHandler(this.btnRecordAnother_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(112, 659);
+            this.label3.Location = new System.Drawing.Point(112, 677);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 24);
             this.label3.TabIndex = 19;
@@ -276,7 +284,7 @@ namespace SaintAlbert
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(251, 603);
+            this.label4.Location = new System.Drawing.Point(251, 621);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 24);
             this.label4.TabIndex = 20;
@@ -286,7 +294,7 @@ namespace SaintAlbert
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(246, 344);
+            this.label5.Location = new System.Drawing.Point(246, 362);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 24);
             this.label5.TabIndex = 21;
@@ -296,11 +304,28 @@ namespace SaintAlbert
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(246, 202);
+            this.label6.Location = new System.Drawing.Point(246, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 24);
             this.label6.TabIndex = 22;
             this.label6.Text = "*";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(309, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(390, 83);
+            this.panel1.TabIndex = 44;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SaintAlbert.Properties.Resources.Blue_and_Cyan_Modern_Icons_General_Hospital_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(255, -150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(490, 351);
+            this.pictureBox2.TabIndex = 43;
+            this.pictureBox2.TabStop = false;
             // 
             // PaymentRecordForm
             // 
@@ -308,6 +333,8 @@ namespace SaintAlbert
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(984, 831);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -328,13 +355,15 @@ namespace SaintAlbert
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.lblPatients);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PaymentRecordForm";
             this.Text = "Record Payments";
             this.Load += new System.EventHandler(this.PaymentRecordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +394,7 @@ namespace SaintAlbert
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

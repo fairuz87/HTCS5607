@@ -39,13 +39,16 @@ namespace SaintAlbert
             this.btnUpdatePatient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPatient = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.White;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(621, 489);
+            this.btnExit.Location = new System.Drawing.Point(621, 547);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(198, 86);
             this.btnExit.TabIndex = 21;
@@ -57,7 +60,7 @@ namespace SaintAlbert
             // 
             this.btnDeleteResearchTopic.BackColor = System.Drawing.Color.White;
             this.btnDeleteResearchTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteResearchTopic.Location = new System.Drawing.Point(1000, 361);
+            this.btnDeleteResearchTopic.Location = new System.Drawing.Point(1000, 419);
             this.btnDeleteResearchTopic.Name = "btnDeleteResearchTopic";
             this.btnDeleteResearchTopic.Size = new System.Drawing.Size(198, 86);
             this.btnDeleteResearchTopic.TabIndex = 19;
@@ -69,7 +72,7 @@ namespace SaintAlbert
             // 
             this.btnUpdateResearchTopic.BackColor = System.Drawing.Color.White;
             this.btnUpdateResearchTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateResearchTopic.Location = new System.Drawing.Point(1000, 236);
+            this.btnUpdateResearchTopic.Location = new System.Drawing.Point(1000, 294);
             this.btnUpdateResearchTopic.Name = "btnUpdateResearchTopic";
             this.btnUpdateResearchTopic.Size = new System.Drawing.Size(198, 86);
             this.btnUpdateResearchTopic.TabIndex = 18;
@@ -81,7 +84,7 @@ namespace SaintAlbert
             // 
             this.btnAddResearchTopic.BackColor = System.Drawing.Color.White;
             this.btnAddResearchTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddResearchTopic.Location = new System.Drawing.Point(732, 236);
+            this.btnAddResearchTopic.Location = new System.Drawing.Point(732, 294);
             this.btnAddResearchTopic.Name = "btnAddResearchTopic";
             this.btnAddResearchTopic.Size = new System.Drawing.Size(198, 86);
             this.btnAddResearchTopic.TabIndex = 17;
@@ -93,7 +96,7 @@ namespace SaintAlbert
             // 
             this.btnRecordPayment.BackColor = System.Drawing.Color.White;
             this.btnRecordPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecordPayment.Location = new System.Drawing.Point(735, 360);
+            this.btnRecordPayment.Location = new System.Drawing.Point(735, 418);
             this.btnRecordPayment.Name = "btnRecordPayment";
             this.btnRecordPayment.Size = new System.Drawing.Size(198, 86);
             this.btnRecordPayment.TabIndex = 16;
@@ -105,7 +108,7 @@ namespace SaintAlbert
             // 
             this.btnPatientsReport.BackColor = System.Drawing.Color.White;
             this.btnPatientsReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientsReport.Location = new System.Drawing.Point(485, 361);
+            this.btnPatientsReport.Location = new System.Drawing.Point(485, 419);
             this.btnPatientsReport.Name = "btnPatientsReport";
             this.btnPatientsReport.Size = new System.Drawing.Size(198, 86);
             this.btnPatientsReport.TabIndex = 15;
@@ -117,7 +120,7 @@ namespace SaintAlbert
             // 
             this.btnDeletePatient.BackColor = System.Drawing.Color.White;
             this.btnDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletePatient.Location = new System.Drawing.Point(485, 236);
+            this.btnDeletePatient.Location = new System.Drawing.Point(485, 294);
             this.btnDeletePatient.Name = "btnDeletePatient";
             this.btnDeletePatient.Size = new System.Drawing.Size(198, 86);
             this.btnDeletePatient.TabIndex = 14;
@@ -129,7 +132,7 @@ namespace SaintAlbert
             // 
             this.btnUpdatePatient.BackColor = System.Drawing.Color.White;
             this.btnUpdatePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePatient.Location = new System.Drawing.Point(223, 361);
+            this.btnUpdatePatient.Location = new System.Drawing.Point(223, 419);
             this.btnUpdatePatient.Name = "btnUpdatePatient";
             this.btnUpdatePatient.Size = new System.Drawing.Size(198, 86);
             this.btnUpdatePatient.TabIndex = 13;
@@ -141,7 +144,8 @@ namespace SaintAlbert
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(620, 56);
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(600, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(251, 59);
             this.label1.TabIndex = 12;
@@ -151,7 +155,7 @@ namespace SaintAlbert
             // 
             this.btnAddPatient.BackColor = System.Drawing.Color.White;
             this.btnAddPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPatient.Location = new System.Drawing.Point(223, 236);
+            this.btnAddPatient.Location = new System.Drawing.Point(223, 294);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(198, 86);
             this.btnAddPatient.TabIndex = 11;
@@ -159,12 +163,34 @@ namespace SaintAlbert
             this.btnAddPatient.UseVisualStyleBackColor = false;
             this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(475, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(496, 55);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Management System";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SaintAlbert.Properties.Resources.Blue_and_Cyan_Modern_Icons_General_Hospital_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(-58, -149);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(438, 396);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1467, 677);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDeleteResearchTopic);
             this.Controls.Add(this.btnUpdateResearchTopic);
@@ -175,11 +201,13 @@ namespace SaintAlbert
             this.Controls.Add(this.btnUpdatePatient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddPatient);
+            this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainMenu";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +225,8 @@ namespace SaintAlbert
         private System.Windows.Forms.Button btnUpdatePatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddPatient;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

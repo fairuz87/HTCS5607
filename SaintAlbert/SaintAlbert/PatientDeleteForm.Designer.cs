@@ -48,11 +48,15 @@ namespace SaintAlbert
             this.lblStreetAddress = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(279, 347);
+            this.txtFirstName.Location = new System.Drawing.Point(279, 396);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(389, 29);
@@ -60,7 +64,7 @@ namespace SaintAlbert
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(279, 312);
+            this.txtLastName.Location = new System.Drawing.Point(279, 361);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(389, 29);
@@ -68,7 +72,7 @@ namespace SaintAlbert
             // 
             // txtPatientID
             // 
-            this.txtPatientID.Location = new System.Drawing.Point(280, 276);
+            this.txtPatientID.Location = new System.Drawing.Point(280, 325);
             this.txtPatientID.Name = "txtPatientID";
             this.txtPatientID.ReadOnly = true;
             this.txtPatientID.Size = new System.Drawing.Size(100, 29);
@@ -77,7 +81,7 @@ namespace SaintAlbert
             // cboPatients
             // 
             this.cboPatients.FormattingEnabled = true;
-            this.cboPatients.Location = new System.Drawing.Point(280, 238);
+            this.cboPatients.Location = new System.Drawing.Point(280, 287);
             this.cboPatients.Name = "cboPatients";
             this.cboPatients.Size = new System.Drawing.Size(580, 32);
             this.cboPatients.TabIndex = 18;
@@ -85,31 +89,33 @@ namespace SaintAlbert
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(582, 595);
+            this.btnReturn.Location = new System.Drawing.Point(582, 623);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(238, 50);
             this.btnReturn.TabIndex = 17;
             this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnDeletePatient
             // 
+            this.btnDeletePatient.BackColor = System.Drawing.Color.White;
             this.btnDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletePatient.Location = new System.Drawing.Point(185, 595);
+            this.btnDeletePatient.Location = new System.Drawing.Point(185, 623);
             this.btnDeletePatient.Name = "btnDeletePatient";
             this.btnDeletePatient.Size = new System.Drawing.Size(227, 50);
             this.btnDeletePatient.TabIndex = 16;
             this.btnDeletePatient.Text = "Delete Patient";
-            this.btnDeletePatient.UseVisualStyleBackColor = true;
+            this.btnDeletePatient.UseVisualStyleBackColor = false;
             this.btnDeletePatient.Click += new System.EventHandler(this.btnDeletePatient_Click);
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(161, 349);
+            this.lblFirstName.Location = new System.Drawing.Point(161, 398);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(122, 25);
             this.lblFirstName.TabIndex = 15;
@@ -119,7 +125,7 @@ namespace SaintAlbert
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(160, 312);
+            this.lblLastName.Location = new System.Drawing.Point(160, 361);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(121, 25);
             this.lblLastName.TabIndex = 14;
@@ -129,7 +135,7 @@ namespace SaintAlbert
             // 
             this.lblPatientID.AutoSize = true;
             this.lblPatientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientID.Location = new System.Drawing.Point(170, 277);
+            this.lblPatientID.Location = new System.Drawing.Point(170, 326);
             this.lblPatientID.Name = "lblPatientID";
             this.lblPatientID.Size = new System.Drawing.Size(111, 25);
             this.lblPatientID.TabIndex = 13;
@@ -139,7 +145,7 @@ namespace SaintAlbert
             // 
             this.lblPatients.AutoSize = true;
             this.lblPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatients.Location = new System.Drawing.Point(185, 240);
+            this.lblPatients.Location = new System.Drawing.Point(185, 289);
             this.lblPatients.Name = "lblPatients";
             this.lblPatients.Size = new System.Drawing.Size(96, 25);
             this.lblPatients.TabIndex = 12;
@@ -148,16 +154,17 @@ namespace SaintAlbert
             // lblDeletePatient
             // 
             this.lblDeletePatient.AutoSize = true;
-            this.lblDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeletePatient.Location = new System.Drawing.Point(337, 79);
+            this.lblDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeletePatient.ForeColor = System.Drawing.Color.Teal;
+            this.lblDeletePatient.Location = new System.Drawing.Point(3, 10);
             this.lblDeletePatient.Name = "lblDeletePatient";
-            this.lblDeletePatient.Size = new System.Drawing.Size(325, 55);
+            this.lblDeletePatient.Size = new System.Drawing.Size(334, 57);
             this.lblDeletePatient.TabIndex = 11;
             this.lblDeletePatient.Text = "Delete Patient";
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(277, 455);
+            this.txtCity.Location = new System.Drawing.Point(277, 504);
             this.txtCity.Name = "txtCity";
             this.txtCity.ReadOnly = true;
             this.txtCity.Size = new System.Drawing.Size(282, 29);
@@ -165,7 +172,7 @@ namespace SaintAlbert
             // 
             // txtSuburb
             // 
-            this.txtSuburb.Location = new System.Drawing.Point(277, 420);
+            this.txtSuburb.Location = new System.Drawing.Point(277, 469);
             this.txtSuburb.Name = "txtSuburb";
             this.txtSuburb.ReadOnly = true;
             this.txtSuburb.Size = new System.Drawing.Size(389, 29);
@@ -173,7 +180,7 @@ namespace SaintAlbert
             // 
             // txtStreetAddress
             // 
-            this.txtStreetAddress.Location = new System.Drawing.Point(278, 383);
+            this.txtStreetAddress.Location = new System.Drawing.Point(278, 432);
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.ReadOnly = true;
             this.txtStreetAddress.Size = new System.Drawing.Size(467, 29);
@@ -183,7 +190,7 @@ namespace SaintAlbert
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(226, 457);
+            this.lblCity.Location = new System.Drawing.Point(226, 506);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(55, 25);
             this.lblCity.TabIndex = 24;
@@ -193,7 +200,7 @@ namespace SaintAlbert
             // 
             this.lblSuburb.AutoSize = true;
             this.lblSuburb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuburb.Location = new System.Drawing.Point(194, 420);
+            this.lblSuburb.Location = new System.Drawing.Point(194, 469);
             this.lblSuburb.Name = "lblSuburb";
             this.lblSuburb.Size = new System.Drawing.Size(87, 25);
             this.lblSuburb.TabIndex = 23;
@@ -203,7 +210,7 @@ namespace SaintAlbert
             // 
             this.lblStreetAddress.AutoSize = true;
             this.lblStreetAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreetAddress.Location = new System.Drawing.Point(122, 384);
+            this.lblStreetAddress.Location = new System.Drawing.Point(122, 433);
             this.lblStreetAddress.Name = "lblStreetAddress";
             this.lblStreetAddress.Size = new System.Drawing.Size(160, 25);
             this.lblStreetAddress.TabIndex = 22;
@@ -211,7 +218,7 @@ namespace SaintAlbert
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(277, 492);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(277, 541);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.ReadOnly = true;
             this.txtPhoneNumber.Size = new System.Drawing.Size(231, 29);
@@ -221,11 +228,28 @@ namespace SaintAlbert
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(124, 494);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(124, 543);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(158, 25);
             this.lblPhoneNumber.TabIndex = 28;
             this.lblPhoneNumber.Text = "Phone number:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblDeletePatient);
+            this.panel1.Location = new System.Drawing.Point(361, 101);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(341, 83);
+            this.panel1.TabIndex = 44;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SaintAlbert.Properties.Resources.Blue_and_Cyan_Modern_Icons_General_Hospital_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(277, -149);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(490, 351);
+            this.pictureBox2.TabIndex = 43;
+            this.pictureBox2.TabStop = false;
             // 
             // PatientDeleteForm
             // 
@@ -233,6 +257,8 @@ namespace SaintAlbert
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(984, 733);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.txtCity);
@@ -251,11 +277,13 @@ namespace SaintAlbert
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.lblPatients);
-            this.Controls.Add(this.lblDeletePatient);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "PatientDeleteForm";
             this.Text = "Delete Patients";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +310,7 @@ namespace SaintAlbert
         private System.Windows.Forms.Label lblStreetAddress;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

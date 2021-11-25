@@ -46,16 +46,21 @@ namespace SaintAlbert
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 102);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(530, 55);
+            this.label1.Size = new System.Drawing.Size(538, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "Update Research Topic";
             // 
@@ -63,7 +68,7 @@ namespace SaintAlbert
             // 
             this.lblResearchTopics.AutoSize = true;
             this.lblResearchTopics.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResearchTopics.Location = new System.Drawing.Point(90, 297);
+            this.lblResearchTopics.Location = new System.Drawing.Point(90, 275);
             this.lblResearchTopics.Name = "lblResearchTopics";
             this.lblResearchTopics.Size = new System.Drawing.Size(186, 25);
             this.lblResearchTopics.TabIndex = 1;
@@ -73,7 +78,7 @@ namespace SaintAlbert
             // 
             this.lblResearchTopicID.AutoSize = true;
             this.lblResearchTopicID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResearchTopicID.Location = new System.Drawing.Point(74, 528);
+            this.lblResearchTopicID.Location = new System.Drawing.Point(74, 506);
             this.lblResearchTopicID.Name = "lblResearchTopicID";
             this.lblResearchTopicID.Size = new System.Drawing.Size(195, 25);
             this.lblResearchTopicID.TabIndex = 2;
@@ -82,7 +87,7 @@ namespace SaintAlbert
             // txtResearchTopicID
             // 
             this.txtResearchTopicID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResearchTopicID.Location = new System.Drawing.Point(285, 523);
+            this.txtResearchTopicID.Location = new System.Drawing.Point(285, 501);
             this.txtResearchTopicID.Name = "txtResearchTopicID";
             this.txtResearchTopicID.ReadOnly = true;
             this.txtResearchTopicID.Size = new System.Drawing.Size(100, 31);
@@ -91,7 +96,7 @@ namespace SaintAlbert
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(285, 563);
+            this.txtDescription.Location = new System.Drawing.Point(285, 541);
             this.txtDescription.MaxLength = 50;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(652, 31);
@@ -99,31 +104,33 @@ namespace SaintAlbert
             // 
             // btnUpdateResearchTopic
             // 
+            this.btnUpdateResearchTopic.BackColor = System.Drawing.Color.White;
             this.btnUpdateResearchTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateResearchTopic.Location = new System.Drawing.Point(194, 727);
+            this.btnUpdateResearchTopic.Location = new System.Drawing.Point(194, 705);
             this.btnUpdateResearchTopic.Name = "btnUpdateResearchTopic";
             this.btnUpdateResearchTopic.Size = new System.Drawing.Size(276, 59);
             this.btnUpdateResearchTopic.TabIndex = 5;
             this.btnUpdateResearchTopic.Text = "Update Research Topic";
-            this.btnUpdateResearchTopic.UseVisualStyleBackColor = true;
+            this.btnUpdateResearchTopic.UseVisualStyleBackColor = false;
             this.btnUpdateResearchTopic.Click += new System.EventHandler(this.btnUpdateResearchTopic_Click);
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.White;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(606, 727);
+            this.btnReturn.Location = new System.Drawing.Point(606, 705);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(153, 57);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(142, 567);
+            this.lblDescription.Location = new System.Drawing.Point(142, 545);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(126, 25);
             this.lblDescription.TabIndex = 7;
@@ -138,7 +145,7 @@ namespace SaintAlbert
             this.lstResearchTopics.FullRowSelect = true;
             this.lstResearchTopics.GridLines = true;
             this.lstResearchTopics.HideSelection = false;
-            this.lstResearchTopics.Location = new System.Drawing.Point(285, 297);
+            this.lstResearchTopics.Location = new System.Drawing.Point(285, 275);
             this.lstResearchTopics.MultiSelect = false;
             this.lstResearchTopics.Name = "lstResearchTopics";
             this.lstResearchTopics.Size = new System.Drawing.Size(409, 209);
@@ -161,7 +168,7 @@ namespace SaintAlbert
             // 
             this.lblLevel.AutoSize = true;
             this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevel.Location = new System.Drawing.Point(197, 604);
+            this.lblLevel.Location = new System.Drawing.Point(197, 582);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(70, 25);
             this.lblLevel.TabIndex = 9;
@@ -170,7 +177,7 @@ namespace SaintAlbert
             // nudLevel
             // 
             this.nudLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudLevel.Location = new System.Drawing.Point(284, 602);
+            this.nudLevel.Location = new System.Drawing.Point(284, 580);
             this.nudLevel.Maximum = new decimal(new int[] {
             10,
             0,
@@ -194,7 +201,7 @@ namespace SaintAlbert
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(166, 662);
+            this.label2.Location = new System.Drawing.Point(166, 640);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 11;
@@ -204,7 +211,7 @@ namespace SaintAlbert
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(262, 604);
+            this.label3.Location = new System.Drawing.Point(262, 582);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 24);
             this.label3.TabIndex = 12;
@@ -214,7 +221,7 @@ namespace SaintAlbert
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(262, 298);
+            this.label4.Location = new System.Drawing.Point(262, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 24);
             this.label4.TabIndex = 13;
@@ -224,11 +231,28 @@ namespace SaintAlbert
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(262, 569);
+            this.label6.Location = new System.Drawing.Point(262, 547);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 24);
             this.label6.TabIndex = 15;
             this.label6.Text = "*";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SaintAlbert.Properties.Resources.Blue_and_Cyan_Modern_Icons_General_Hospital_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(250, -144);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(524, 351);
+            this.pictureBox2.TabIndex = 41;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(238, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(536, 100);
+            this.panel1.TabIndex = 42;
             // 
             // ResearchTopicUpdateForm
             // 
@@ -236,6 +260,8 @@ namespace SaintAlbert
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(984, 831);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -250,12 +276,14 @@ namespace SaintAlbert
             this.Controls.Add(this.txtResearchTopicID);
             this.Controls.Add(this.lblResearchTopicID);
             this.Controls.Add(this.lblResearchTopics);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ResearchTopicUpdateForm";
             this.Text = "Update Research Topics";
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +308,7 @@ namespace SaintAlbert
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
