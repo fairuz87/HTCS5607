@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2975C49A-4EEA-4B15-9137-D740BE418AFA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SaintAlbert</RootNamespace>
+    <AssemblyName>SaintAlbert</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMsgBox.designer.cs">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataController.Designer.cs">
+      <DependentUpon>DataController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientAddForm.Designer.cs">
+      <DependentUpon>PatientAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDeleteForm.Designer.cs">
+      <DependentUpon>PatientDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientReportForm.Designer.cs">
+      <DependentUpon>PatientReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientUpdateForm.Designer.cs">
+      <DependentUpon>PatientUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentRecordForm.Designer.cs">
+      <DependentUpon>PaymentRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResearchTopicAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResearchTopicAddForm.Designer.cs">
+      <DependentUpon>ResearchTopicAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResearchTopicsDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResearchTopicsDeleteForm.Designer.cs">
+      <DependentUpon>ResearchTopicsDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResearchTopicsUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResearchTopicsUpdateForm.Designer.cs">
+      <DependentUpon>ResearchTopicsUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaintAlbertDatabaseDataSet.cs">
+      <DependentUpon>SaintAlbertDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SaintAlbertDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaintAlbertDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomMsgBox.resx">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataController.resx">
+      <DependentUpon>DataController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientAddForm.resx">
+      <DependentUpon>PatientAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDeleteForm.resx">
+      <DependentUpon>PatientDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientReportForm.resx">
+      <DependentUpon>PatientReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientUpdateForm.resx">
+      <DependentUpon>PatientUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentRecordForm.resx">
+      <DependentUpon>PaymentRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResearchTopicAddForm.resx">
+      <DependentUpon>ResearchTopicAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResearchTopicsDeleteForm.resx">
+      <DependentUpon>ResearchTopicsDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResearchTopicsUpdateForm.resx">
+      <DependentUpon>ResearchTopicsUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SaintAlbertDatabaseDataSet.xsc">
+      <DependentUpon>SaintAlbertDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SaintAlbertDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaintAlbertDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaintAlbertDatabaseDataSet.xss">
+      <DependentUpon>SaintAlbertDatabaseDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue and Cyan Modern Icons General Hospital Logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
